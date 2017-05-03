@@ -13,15 +13,16 @@ import {
   Image,
   Navigator,
   Text,
-  View
+  View,
+  ListView
 } from 'react-native';
-import TabNavigator from 'react-native-tab-navigator';
 import Boy from './boy';
+import ListViewTest from './listViewTest';
+
 
 export default class GitHubPopular extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       selectedTab: 'tab_polular',
     };
@@ -68,7 +69,7 @@ export default class GitHubPopular extends Component {
             onPress={() => this.setState({ selectedTab: 'tab_my' })}>
             <View style={styles.page2}></View>
           </TabNavigator.Item>
-        </TabNavigator>*/}
+        </TabNavigator>
         <Navigator
           initialRoute={{
             component:Boy
@@ -77,7 +78,8 @@ export default class GitHubPopular extends Component {
             let Component=route.component;
             return <Component navigator={navigator} {...route.params}/>
           }}
-        ></Navigator>
+        ></Navigator>*/}
+        <ListViewTest/>
       </View>
     );
   }
